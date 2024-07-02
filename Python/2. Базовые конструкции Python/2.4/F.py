@@ -1,10 +1,13 @@
-name = input()
-cost = int(input())
-weight = int(input())
-count = int(input())
+import math
 
-print("Чек")
-print(f"{name} - {weight}кг - {cost}руб/кг")
-print(f"Итого: {weight * cost}руб")
-print(f"Внесено: {count}руб")
-print(f"Сдача: {count - weight * cost}руб")
+N = int(input().strip())
+numbers = []
+for _ in range(N):
+    numbers.append(int(input().strip()))
+
+gcd_result = numbers[0]
+for num in numbers[1:]:
+    while num != 0:
+        gcd_result, num = num, gcd_result % num
+
+print(gcd_result)

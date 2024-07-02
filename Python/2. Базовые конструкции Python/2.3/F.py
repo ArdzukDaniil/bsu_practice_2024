@@ -1,10 +1,6 @@
-name = input()
-cost = int(input())
-weight = int(input())
-count = int(input())
+s1 = int(input())
+s2 = int(input())
 
-print("Чек")
-print(f"{name} - {weight}кг - {cost}руб/кг")
-print(f"Итого: {weight * cost}руб")
-print(f"Внесено: {count}руб")
-print(f"Сдача: {count - weight * cost}руб")
+while s2:
+    s1, s2 = s2, s1 % s2
+print(s1)

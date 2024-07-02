@@ -1,3 +1,7 @@
-print("Как Вас зовут?")
-username = input()
-print(f"Привет, {username}")
+count = 0
+str = input()
+while (str != "Приехали!"):
+    if "зайка" in str:
+        count += 1
+    str = input()
+print(count)

@@ -1,10 +1,5 @@
-name = input()
-cost = int(input())
-weight = int(input())
-count = int(input())
-
-print("Чек")
-print(f"{name} - {weight}кг - {cost}руб/кг")
-print(f"Итого: {weight * cost}руб")
-print(f"Внесено: {count}руб")
-print(f"Сдача: {count - weight * cost}руб")
+s1 = int(input())
+if (s1 % 4 == 0 and s1 % 100 != 0) or (s1 % 400 == 0):
+    print("YES")
+else:
+    print("NO")
