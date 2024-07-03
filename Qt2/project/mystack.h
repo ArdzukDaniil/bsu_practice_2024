@@ -2,13 +2,8 @@
 #define MYSTACK_H
 #include "mylist.h"
 
-<<<<<<< HEAD
-class MyStack {
 
-=======
-class MyStack 
-{
->>>>>>> 3520deb372ebe7e00f1d39130abc9f753bc022aa
+class MyStack {
 private:
     MyList* list;
 public:
