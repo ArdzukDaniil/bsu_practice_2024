@@ -1,33 +1,44 @@
 #include "mystack.h"
 
-MyStack::MyStack() : MyList() {}
-MyStack::MyStack(int value) : MyList(value) {}
-MyStack::MyStack(int value1, int value2, int value3) : MyList(value1, value2, value3) {}
+MyStack::MyStack() {
+    list = new MyList();
+}
+
+MyStack::MyStack(int value) {
+    list = new MyList(value);
+}
+
+MyStack::MyStack(int value1, int value2, int value3) {
+    list = new MyList(value1, value2, value3);
+}
+
+MyStack::~MyStack() {
+    delete list;
+}
 
 void MyStack::Push(int value) {
-    AddFirst(value);
+    list->AddFirst(value);
 }
-
 
 int MyStack::Pop() {
-    return DeleteFirst();
+    return list->DeleteFirst();
 }
 
-
 int MyStack::Top() const {
-    if (IsEmpty()) {
+    if (list->IsEmpty()) {
         return -1;
     }
+    return list->GetFirst()->data;
+}
 
-    SElement* temp = first;
-    return temp->data;
+bool MyStack::IsEmpty() const {
+    return list->IsEmpty();
 }
 
 void MyStack::PrintStack() const {
-    Print();
+    list->Print();
 }
 
-SElement* MyStack::GetFirst() const
-{
-    return first;
+SElement* MyStack::GetFirst() const {
+    return list->GetFirst();
 }

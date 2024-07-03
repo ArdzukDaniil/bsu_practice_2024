@@ -17,10 +17,13 @@ public:
     MyList(int val);
     MyList(int val1, int val2, int val3);
     ~MyList();
+
     bool IsEmpty() const;
     void AddFirst(int Value);
     int DeleteFirst();
     void Print()const;
+
+    SElement* GetFirst() const;
 };
 
 #endif // MYLIST_H

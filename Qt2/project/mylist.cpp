@@ -14,6 +14,7 @@ MyList::~MyList() {
         DeleteFirst();
     }
 };
+
 int MyList::DeleteFirst() {
     if (first == nullptr) {
         return -1;
@@ -25,12 +26,15 @@ int MyList::DeleteFirst() {
     delete temp;
     return value;
 }
+
 bool MyList::IsEmpty() const {
     return first == nullptr;
 }
+
 void MyList::AddFirst(int value) {
     first = new SElement(value, first);
 }
+
 void MyList::Print() const {
     SElement* current = first;
     while (current != nullptr) {
@@ -38,4 +42,8 @@ void MyList::Print() const {
         current = current->next;
     }
     std::cout << std::endl;
+}
+
+SElement* MyList::GetFirst() const {
+    return first;
 }
