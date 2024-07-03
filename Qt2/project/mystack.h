@@ -2,7 +2,7 @@
 #define MYSTACK_H
 #include "mylist.h"
 
-class MyStack: 
+class MyStack 
 {
 private:
     MyList* list;
