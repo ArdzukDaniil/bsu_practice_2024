@@ -1,7 +1,7 @@
 #ifndef MYLIST_H
 #define MYLIST_H
 #include <iostream>
-
+#include <vector>
 struct SElement
 {
     int data;
@@ -16,7 +16,7 @@ public:
     MyList();
     MyList(int val);
     MyList(int val1, int val2, int val3);
-    ~MyList();
+   ~MyList();
 
     bool IsEmpty() const;
     void AddFirst(int Value);
@@ -24,6 +24,7 @@ public:
     void Print()const;
 
     SElement* GetFirst() const;
+    std::vector<int> ToVector() const;
 };
 
 #endif // MYLIST_H

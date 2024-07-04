@@ -42,3 +42,7 @@ void MyStack::PrintStack() const {
 SElement* MyStack::GetFirst() const {
     return list->GetFirst();
 }
+
+std::vector<int> MyStack::ToVector() const {
+    return list->ToVector();
+}

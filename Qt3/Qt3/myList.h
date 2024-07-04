@@ -1,55 +1,32 @@
 #pragma once
-
 #include <iostream>
+#include <vector>
 
-struct SElement {
+struct SElement
+{
     int data;
     SElement* next;
-    SElement(int data_, SElement* next_) : data{ data_ }, next{ next_ } {};
+    SElement(int data_, SElement* next_) :data{ data_ }, next{ next_ } {};
 };
 
-class MyList {
-private:
+class MyList
+{
+protected:
     SElement* first;
-
 public:
     MyList();
     MyList(int val);
     MyList(int val1, int val2, int val3);
     ~MyList();
 
-    bool IsEmpty() const;
-    void AddFirst(int value);
+    bool Empty() const; 
+    void AddFirst(int Value);
     int DeleteFirst();
-    void Print() const;
+    void Print()const;
 
-    class Iterator {
-    private:
-        SElement* current;
+    int Count() const; 
+    int Get(int n) const; 
+    void ToVector(std::vector<int>& Vec) const;
 
-    public:
-        Iterator(SElement* element) : current{ element } {}
-
-        Iterator& operator++() {
-            current = current->next;
-            return *this;
-        }
-
-        int operator*() const {
-            return current->data;
-        }
-
-        bool operator!=(const Iterator& other) const {
-            return current != other.current;
-        }
-    };
-
-    Iterator begin() {
-        return Iterator(first);
-    }
-
-    Iterator end() {
-        return Iterator(nullptr);
-    }
+    SElement* GetFirst() const;
 };
-

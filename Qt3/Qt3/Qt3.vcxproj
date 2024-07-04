@@ -127,10 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ListIterator.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="myList.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ListIterator.h" />
     <ClInclude Include="myList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

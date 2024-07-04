@@ -1,14 +1,19 @@
-﻿#include "mylist.h"
+﻿#include <iostream>
+#include "mylist.h"
+#include "listiterator.h"
 
-int main() {
-    setlocale(LC_ALL, "Rus");
-    MyList list(1, 2, 3);
+int main()
+{
+    MyList list;
+    list.AddFirst(555);
+    list.AddFirst(888);
+    list.AddFirst(99);
+    list.AddFirst(777);
 
-    std::cout << "Элементы списка: ";
-    for (MyList::Iterator it = list.begin(); it != list.end(); ++it) {
-        std::cout << *it << " ";
+    ListIterator iterator(&list);
+    for (iterator.First(); !iterator.IsDone(); iterator.Next())
+    {
+        std::cout << iterator.CurrentItem() << '\n';
     }
-    std::cout << std::endl;
-
     return 0;
 }

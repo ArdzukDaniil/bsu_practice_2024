@@ -1,7 +1,8 @@
 #ifndef MYSTACK_H
 #define MYSTACK_H
 #include "mylist.h"
-
+#include <iostream>
+#include <vector>
 
 class MyStack {
 private:
@@ -18,6 +19,7 @@ public:
     void PrintStack() const;
     bool IsEmpty() const;
     SElement* GetFirst() const;
+    std::vector<int> ToVector() const;
 };
 
 #endif // MYSTACK_H

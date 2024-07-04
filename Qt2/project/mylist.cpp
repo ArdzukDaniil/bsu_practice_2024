@@ -47,3 +47,13 @@ void MyList::Print() const {
 SElement* MyList::GetFirst() const {
     return first;
 }
+
+std::vector<int> MyList::ToVector() const {
+    std::vector<int> result;
+    SElement* current = first;
+    while (current != nullptr) {
+        result.push_back(current->data);
+        current = current->next;
+    }
+    return result;
+}
