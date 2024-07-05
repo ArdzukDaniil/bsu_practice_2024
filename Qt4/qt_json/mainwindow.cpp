@@ -23,14 +23,18 @@ MainWindow::~MainWindow()
 
 void MainWindow::onOpenDiagramClick() {
     QString file_path = QFileDialog::getOpenFileName(this, tr("Open Diagram"), "", tr("JSON Files (*.json)"));
-    if (!file_path.isEmpty()) {
-        std::ifstream fin(file_path.toStdString());
-        if (fin) {
-            nlohmann::json json;
-            fin >> json;
-            fin.close();
-            ui->diagram->loadData(json);
-    }
+    if (file_path.isEmpty())
+        return;
+
+    std::fstream fin(file_path.toStdString());
+    if (!fin.is_open())
+        return;
+
+    nlohmann::json json = nlohmann::json::parse(fin);
+    fin.close();
+
+    ui->diagram->loadData(json);
+    this->update();
 }
 
 void MainWindow::onAddDataClick() {

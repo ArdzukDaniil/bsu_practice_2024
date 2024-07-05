@@ -79,7 +79,7 @@ void Diagram::paintEvent(QPaintEvent* event) {
 
     for (const auto& [key, value] : data) {
         double bar_width = (value / static_cast<double>(max_value)) * (diagram_width - 50);
-        painter.drawText(5 + bar_width + 5, y_pos + penWidth / 2, key + ": " + QString::number(value));
+        painter.drawText(bar_width + 5, y_pos + penWidth / 2, key + ": " + QString::number(value));
         y_pos += spacing;
     }
 
